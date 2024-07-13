@@ -8,8 +8,17 @@
       type="module"
       src="./src/button-component/button.component.ts"
     ></script>
+    <script type="module" src="./src/dev-component/dev.component.ts"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
-    <lit-button />
+    <lit-button variant="filled" type="primary" size="sm" label="Submit" loader>
+      <i slot="icon-left" class="fa-regular fa-user"></i>
+    </lit-button>
+    <hr />
+    <dev-component></dev-component>
   </body>
 </html>

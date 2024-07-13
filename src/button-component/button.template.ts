@@ -10,9 +10,12 @@ const template = (scope: LitButton): TemplateResult => {
     role="button"
     tabindex="0"
     ?disabled=${scope.disabled}
+    @click=${scope.handleClick}
   >
+    <slot name="icon-left"></slot>
     <span class="btn-label">${scope.label}</span>
-    ${scope.loading && !scope.disabled
+    <slot name="icon-right"></slot>
+    ${scope.loader && !scope.disabled
       ? html`<span class="btn-spinner"></span>`
       : nothing}
   </button>`;
