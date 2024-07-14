@@ -6,7 +6,6 @@ import styles from './button.styles';
 @customElement('lit-button')
 export class LitButton extends LitElement {
   //Attributes that the custom web component will accept
-
   @property({ type: String, reflect: true }) label: string = 'Click Me!';
 
   @property({ type: String, reflect: true }) variant: 'filled' | 'outline' =
