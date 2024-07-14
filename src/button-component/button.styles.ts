@@ -7,6 +7,7 @@ export default css`
     box-sizing: border-box;
     cursor: pointer;
     display: flex;
+    gap: 0.5rem;
     align-items: center;
     font-family: nunito, roboto, proxima-nova, 'proxima nova', sans-serif;
     outline: 0;
@@ -28,14 +29,6 @@ export default css`
     cursor: not-allowed;
   }
 
-  ::slotted([slot='icon-left']) {
-    margin-right: 0.5rem;
-  }
-
-  ::slotted([slot='icon-right']) {
-    margin-left: 0.5rem;
-  }
-
   /**
    * Size MD
    */
@@ -53,7 +46,6 @@ export default css`
     display: inline-block;
     height: 1.15rem;
     width: 1.15rem;
-    margin-left: 0.5rem;
     border-radius: 50%;
     border: 2.5px solid transparent;
   }
@@ -75,7 +67,6 @@ export default css`
     display: inline-block;
     height: 0.8rem;
     width: 0.8rem;
-    margin-left: 0.5rem;
     border-radius: 50%;
     border: 1.5px solid transparent;
   }

@@ -5,10 +5,7 @@ import typescript from '@rollup/plugin-typescript';
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(
-        __dirname,
-        'src/button-component/button.component.ts'
-      ),
+      entry: path.resolve(__dirname, 'src/button-component/button.ts'),
       name: 'lit-button',
       fileName: (format) => `lit-button.${format}.js`,
     },

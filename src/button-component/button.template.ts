@@ -1,5 +1,5 @@
 import { html, nothing, TemplateResult } from 'lit';
-import { LitButton } from './button.component';
+import LitButton from './button.component';
 
 const template = (scope: LitButton): TemplateResult => {
   return html`<button

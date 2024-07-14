@@ -4,7 +4,7 @@ import template from './button.template';
 import styles from './button.styles';
 
 @customElement('lit-button')
-export class LitButton extends LitElement {
+export default class LitButton extends LitElement {
   //Attributes that the custom web component will accept
   @property({ type: String, reflect: true }) label: string = 'Click Me!';
 
@@ -63,11 +63,5 @@ export class LitButton extends LitElement {
 
   disconnectedCallback(): void {
     super.disconnectedCallback();
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'lit-button': LitButton;
   }
 }
