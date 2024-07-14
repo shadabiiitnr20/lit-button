@@ -15,10 +15,25 @@
     />
   </head>
   <body>
-    <lit-button variant="filled" type="primary" size="sm" label="Submit" loader>
-      <i slot="icon-left" class="fa-regular fa-user"></i>
+    <lit-button
+      variant="filled"
+      type="primary"
+      size="sm"
+      label="Submit"
+      loader
+      disabled
+    >
+      <i slot="icon-left" class="fas fa-search"></i>
+      Search
     </lit-button>
     <hr />
-    <dev-component></dev-component>
+    <lit-button
+      variant="outline"
+      type="primary"
+      size="md"
+      label="Submit"
+      loader
+    >
+    </lit-button>
   </body>
 </html>

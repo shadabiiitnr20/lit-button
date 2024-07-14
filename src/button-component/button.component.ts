@@ -43,16 +43,19 @@ export class LitButton extends LitElement {
     super.connectedCallback();
   }
 
-  handleClick() {
-    if (!this.disabled || !this.loader) {
-      this.dispatchEvent(
-        new CustomEvent('button-click', {
-          detail: { message: 'Button clicked!' },
-          bubbles: true,
-          composed: true,
-        })
-      );
+  handleClick(event: MouseEvent): void {
+    if (this.disabled || this.loader) {
+      event.stopPropagation();
+      event.preventDefault();
+      return;
     }
+    this.dispatchEvent(
+      new CustomEvent('button-click', {
+        detail: { message: 'Button clicked!' },
+        bubbles: true,
+        composed: true,
+      })
+    );
   }
 
   render(): TemplateResult {

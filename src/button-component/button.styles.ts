@@ -6,7 +6,8 @@ export default css`
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     box-sizing: border-box;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     font-family: nunito, roboto, proxima-nova, 'proxima nova', sans-serif;
     outline: 0;
     text-align: center;
@@ -18,12 +19,21 @@ export default css`
     vertical-align: middle;
   }
 
+  .btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn.btn-loader-cursor {
+    cursor: not-allowed;
+  }
+
   ::slotted([slot='icon-left']) {
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
   }
 
   ::slotted([slot='icon-right']) {
-    margin-left: 0.25rem;
+    margin-left: 0.5rem;
   }
 
   /**
@@ -35,8 +45,17 @@ export default css`
     font-weight: 600;
     line-height: 1rem;
     min-height: 2.5rem;
-    min-width: 8rem;
+    min-width: auto;
     padding: 0.75rem 1rem;
+  }
+
+  .md > .btn-spinner {
+    display: inline-block;
+    height: 1.15rem;
+    width: 1.15rem;
+    margin-left: 0.5rem;
+    border-radius: 50%;
+    border: 2.5px solid transparent;
   }
 
   /**
@@ -48,8 +67,17 @@ export default css`
     font-weight: 600;
     line-height: 1rem;
     min-height: 1.5rem;
-    min-width: 6rem;
+    min-width: auto;
     padding: 0.25rem 0.5rem;
+  }
+
+  .sm > .btn-spinner {
+    display: inline-block;
+    height: 0.8rem;
+    width: 0.8rem;
+    margin-left: 0.5rem;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
   }
 
   /**
@@ -70,7 +98,24 @@ export default css`
   }
 
   .filled.primary:active {
-    opacity: 0.5;
+    opacity: 0.75;
+  }
+
+  /** Filled Primary Spinner */
+
+  .filled.primary > .btn-spinner {
+    animation: spin 1s linear infinite;
+    background: linear-gradient(#5ba4fc, #5ba4fc),
+      conic-gradient(from 0.15turn, white, #5ba4fc);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .filled.primary:hover > .btn-spinner {
+    background: linear-gradient(#0473f8, #0473f8),
+      conic-gradient(from 0.15turn, white, #0473f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
   }
 
   /**
@@ -92,7 +137,24 @@ export default css`
   }
 
   .outline.primary:active {
-    opacity: 0.5;
+    opacity: 0.75;
+  }
+
+  /** Outline Primary Spinner */
+
+  .outline.primary > .btn-spinner {
+    animation: spin 1s linear infinite;
+    background: linear-gradient(#ffffff, #ffffff),
+      conic-gradient(from 0.15turn, white, #5ba4fc);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .outline.primary:hover > .btn-spinner {
+    background: linear-gradient(#ffffff, #ffffff),
+      conic-gradient(from 0.15turn, white, #0473f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
   }
 
   /**
@@ -113,7 +175,24 @@ export default css`
   }
 
   .filled.danger:active {
-    opacity: 0.5;
+    opacity: 0.75;
+  }
+
+  /** Filled Danger Spinner */
+
+  .filled.danger > .btn-spinner {
+    animation: spin 1s linear infinite;
+    background: linear-gradient(#fc3d39, #fc3d39),
+      conic-gradient(from 0.15turn, white, #fc3d39);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .filled.danger:hover > .btn-spinner {
+    background: linear-gradient(#e10703, #e10703),
+      conic-gradient(from 0.15turn, white, #e10703);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
   }
 
   /**
@@ -135,7 +214,24 @@ export default css`
   }
 
   .outline.danger:active {
-    opacity: 0.5;
+    opacity: 0.75;
+  }
+
+  /** Outline Danger Spinner */
+
+  .outline.danger > .btn-spinner {
+    animation: spin 1s linear infinite;
+    background: linear-gradient(#ffffff, #ffffff),
+      conic-gradient(from 0.15turn, white, #fc3d39);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .outline.danger:hover > .btn-spinner {
+    background: linear-gradient(#ffffff, #ffffff),
+      conic-gradient(from 0.15turn, white, #e10703);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
   }
 
   /**
@@ -156,7 +252,24 @@ export default css`
   }
 
   .filled.success:active {
-    opacity: 0.5;
+    opacity: 0.75;
+  }
+
+  /** Filled Success Spinner */
+
+  .filled.success > .btn-spinner {
+    animation: spin 1s linear infinite;
+    background: linear-gradient(#53d769, #53d769),
+      conic-gradient(from 0.15turn, white, #53d769);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .filled.success:hover > .btn-spinner {
+    background: linear-gradient(#26a53b, #26a53b),
+      conic-gradient(from 0.15turn, white, #26a53b);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
   }
 
   /**
@@ -178,7 +291,24 @@ export default css`
   }
 
   .outline.success:active {
-    opacity: 0.5;
+    opacity: 0.75;
+  }
+
+  /** Outline Success Spinner */
+
+  .outline.success > .btn-spinner {
+    animation: spin 1s linear infinite;
+    background: linear-gradient(#ffffff, #ffffff),
+      conic-gradient(from 0.15turn, white, #53d769);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .outline.success:hover > .btn-spinner {
+    background: linear-gradient(#ffffff, #ffffff),
+      conic-gradient(from 0.15turn, white, #26a53b);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
   }
 
   /**
@@ -199,7 +329,24 @@ export default css`
   }
 
   .filled.neutral:active {
-    opacity: 0.5;
+    opacity: 0.75;
+  }
+
+  /** Filled Neutral Spinner */
+
+  .filled.neutral > .btn-spinner {
+    animation: spin 1s linear infinite;
+    background: linear-gradient(#e8e8e8, #e8e8e8),
+      conic-gradient(from 0.15turn, black, #e8e8e8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .filled.neutral:hover > .btn-spinner {
+    background: linear-gradient(#dcdcdc, #dcdcdc),
+      conic-gradient(from 0.15turn, black, #dcdcdc);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
   }
 
   /**
@@ -220,6 +367,35 @@ export default css`
   }
 
   .outline.neutral:active {
-    opacity: 0.5;
+    opacity: 0.75;
+  }
+
+  /** Outline Neutral Spinner */
+
+  .outline.neutral > .btn-spinner {
+    animation: spin 1s linear infinite;
+    background: linear-gradient(#ffffff, #ffffff),
+      conic-gradient(from 0.15turn, black, #ffffff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .outline.neutral:hover > .btn-spinner {
+    background: linear-gradient(#ffffff, #ffffff),
+      conic-gradient(from 0.15turn, black, #ffffff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  /**
+   * Animation KeyFrame
+   */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `;
