@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rm -rf dist && tsc && vite build",
     "preview": "vite preview"
   },
   "author": "Md. Shadab Hussain",
