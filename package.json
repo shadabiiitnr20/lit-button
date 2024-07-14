@@ -1,17 +1,36 @@
 {
   "name": "lit-button",
-  "private": true,
-  "version": "0.0.0",
+  "description": "A simple Custom Button Component made using Lit",
+  "version": "0.1.0",
   "type": "module",
+  "main": "dist/lit-button.umd.js",
+  "module": "dist/lit-button.es.js",
+  "types": "dist/src/lit-button.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lit-button.es.js",
+      "require": "./dist/lit-button.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "author": "Md. Shadab Hussain",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "lit",
+    "component"
+  ],
   "dependencies": {
     "lit": "^3.1.4"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   }
