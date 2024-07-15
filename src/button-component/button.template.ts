@@ -12,13 +12,28 @@ const template = (scope: LitButton): TemplateResult => {
     ?disabled=${scope.disabled}
     @click=${scope.handleClick}
   >
-    <slot name="icon-left"></slot>
-    <span class="btn-label">${scope.label}</span>
-    <slot name="icon-right"></slot>
+    ${buttonContent(scope)}
     ${scope.loader && !scope.disabled
       ? html`<span class="btn-spinner"></span>`
       : nothing}
   </button>`;
+};
+
+const buttonContent = (scope: LitButton): TemplateResult => {
+  switch (scope.iconPosition) {
+    case 'left':
+      return html`
+        <slot name="icon"></slot>
+        <span class="btn-label">${scope.label}</span>
+      `;
+    case 'right':
+      return html`
+        <span class="btn-label">${scope.label}</span>
+        <slot name="icon"></slot>
+      `;
+    default:
+      return html`<span class="btn-label">${scope.label}</span> `;
+  }
 };
 
 export default template;

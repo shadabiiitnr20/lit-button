@@ -1,15 +1,47 @@
 import { css } from 'lit';
 
 export default css`
+  :root {
+    --btn-border-radius: 6px;
+    --btn-box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    --btn-font-family: nunito, roboto, proxima-nova, 'proxima nova', sans-serif;
+    --btn-gap: 0.5rem;
+    --btn-primary-bg: #5ba4fc;
+    --btn-primary-border: #5ba4fc;
+    --btn-primary-color: #ffffff;
+    --btn-primary-hover-bg: #0473f8;
+    --btn-primary-active-opacity: 0.75;
+    --btn-danger-bg: #fc3d39;
+    --btn-danger-border: #fc3d39;
+    --btn-danger-hover-bg: #e10703;
+    --btn-danger-active-opacity: 0.75;
+    --btn-success-bg: #53d769;
+    --btn-success-border: #53d769;
+    --btn-success-hover-bg: #26a53b;
+    --btn-success-active-opacity: 0.75;
+    --btn-neutral-bg: #e8e8e8;
+    --btn-neutral-border: #000000;
+    --btn-neutral-hover-bg: #dcdcdc;
+    --btn-neutral-active-opacity: 0.75;
+    --btn-spinner-animation: spin 1s linear infinite;
+  }
+
   .btn {
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    border-radius: var(--btn-border-radius, 6px);
+    box-shadow: var(--btn-box-shadow, rgba(0, 0, 0, 0.1) 1px 2px 4px);
     box-sizing: border-box;
     cursor: pointer;
     display: flex;
-    gap: 0.5rem;
+    gap: var(--btn-gap, 0.5rem);
     align-items: center;
-    font-family: nunito, roboto, proxima-nova, 'proxima nova', sans-serif;
+    font-family: var(
+      --btn-font-family,
+      nunito,
+      roboto,
+      proxima-nova,
+      'proxima nova',
+      sans-serif
+    );
     outline: 0;
     text-align: center;
     text-rendering: geometricprecision;
@@ -76,35 +108,41 @@ export default css`
    */
 
   .filled.primary {
-    background: #5ba4fc;
-    border: 1px solid #5ba4fc;
-    color: #ffffff;
+    background: var(--btn-primary-bg, #5ba4fc);
+    border: 1px solid var(--btn-primary-border, #5ba4fc);
+    color: var(--btn-primary-color, #ffffff);
   }
 
   .filled.primary:hover,
   .filled.primary:active {
-    background-color: #0473f8;
+    background-color: var(--btn-primary-hover-bg, #0473f8);
     background-position: 0 0;
-    color: #ffffff;
+    color: var(--btn-primary-color, #ffffff);
   }
 
   .filled.primary:active {
-    opacity: 0.75;
+    opacity: var(--btn-primary-active-opacity, 0.75);
   }
 
   /** Filled Primary Spinner */
 
   .filled.primary > .btn-spinner {
-    animation: spin 1s linear infinite;
-    background: linear-gradient(#5ba4fc, #5ba4fc),
-      conic-gradient(from 0.15turn, white, #5ba4fc);
+    animation: var(--btn-spinner-animation, spin 1s linear infinite);
+    background: linear-gradient(
+        var(--btn-primary-bg, #5ba4fc),
+        var(--btn-primary-bg, #5ba4fc)
+      ),
+      conic-gradient(from 0.15turn, white, var(--btn-primary-bg, #5ba4fc));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
 
   .filled.primary:hover > .btn-spinner {
-    background: linear-gradient(#0473f8, #0473f8),
-      conic-gradient(from 0.15turn, white, #0473f8);
+    background: linear-gradient(
+        var(--btn-primary-hover-bg, #0473f8),
+        var(--btn-primary-hover-bg, #0473f8)
+      ),
+      conic-gradient(from 0.15turn, white, var(--btn-primary-hover-bg, #0473f8));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
@@ -115,35 +153,35 @@ export default css`
 
   .outline.primary {
     background: #ffffff;
-    border: 1px solid #5ba4fc;
-    color: #5ba4fc;
+    border: 1px solid var(--btn-primary-border, #5ba4fc);
+    color: var(--btn-primary-border, #5ba4fc);
   }
 
   .outline.primary:hover,
   .outline.primary:active {
     background-color: #ffffff;
     background-position: 0 0;
-    color: #0473f8;
-    border: 1px solid #0473f8;
+    color: var(--btn-primary-hover-bg, #0473f8);
+    border: 1px solid var(--btn-primary-hover-bg, #0473f8);
   }
 
   .outline.primary:active {
-    opacity: 0.75;
+    opacity: var(--btn-primary-active-opacity, 0.75);
   }
 
   /** Outline Primary Spinner */
 
   .outline.primary > .btn-spinner {
-    animation: spin 1s linear infinite;
+    animation: var(--btn-spinner-animation, spin 1s linear infinite);
     background: linear-gradient(#ffffff, #ffffff),
-      conic-gradient(from 0.15turn, white, #5ba4fc);
+      conic-gradient(from 0.15turn, white, var(--btn-primary-border, #5ba4fc));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
 
   .outline.primary:hover > .btn-spinner {
     background: linear-gradient(#ffffff, #ffffff),
-      conic-gradient(from 0.15turn, white, #0473f8);
+      conic-gradient(from 0.15turn, white, var(--btn-primary-hover-bg, #0473f8));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
@@ -153,35 +191,41 @@ export default css`
    */
 
   .filled.danger {
-    background: #fc3d39;
-    border: 1px solid #fc3d39;
-    color: #ffffff;
+    background: var(--btn-danger-bg, #fc3d39);
+    border: 1px solid var(--btn-danger-border, #fc3d39);
+    color: var(--btn-primary-color, #ffffff);
   }
 
   .filled.danger:hover,
   .filled.danger:active {
-    background-color: #e10703;
+    background-color: var(--btn-danger-hover-bg, #e10703);
     background-position: 0 0;
-    color: #ffffff;
+    color: var(--btn-primary-color, #ffffff);
   }
 
   .filled.danger:active {
-    opacity: 0.75;
+    opacity: var(--btn-danger-active-opacity, 0.75);
   }
 
   /** Filled Danger Spinner */
 
   .filled.danger > .btn-spinner {
-    animation: spin 1s linear infinite;
-    background: linear-gradient(#fc3d39, #fc3d39),
-      conic-gradient(from 0.15turn, white, #fc3d39);
+    animation: var(--btn-spinner-animation, spin 1s linear infinite);
+    background: linear-gradient(
+        var(--btn-danger-bg, #fc3d39),
+        var(--btn-danger-bg, #fc3d39)
+      ),
+      conic-gradient(from 0.15turn, white, var(--btn-danger-bg, #fc3d39));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
 
   .filled.danger:hover > .btn-spinner {
-    background: linear-gradient(#e10703, #e10703),
-      conic-gradient(from 0.15turn, white, #e10703);
+    background: linear-gradient(
+        var(--btn-danger-hover-bg, #e10703),
+        var(--btn-danger-hover-bg, #e10703)
+      ),
+      conic-gradient(from 0.15turn, white, var(--btn-danger-hover-bg, #e10703));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
@@ -192,35 +236,35 @@ export default css`
 
   .outline.danger {
     background: #ffffff;
-    border: 1px solid #fc3d39;
-    color: #fc3d39;
+    border: 1px solid var(--btn-danger-border, #fc3d39);
+    color: var(--btn-danger-border, #fc3d39);
   }
 
   .outline.danger:hover,
   .outline.danger:active {
     background-color: #ffffff;
     background-position: 0 0;
-    color: #e10703;
-    border: 1px solid #e10703;
+    color: var(--btn-danger-hover-bg, #e10703);
+    border: 1px solid var(--btn-danger-hover-bg, #e10703);
   }
 
   .outline.danger:active {
-    opacity: 0.75;
+    opacity: var(--btn-danger-active-opacity, 0.75);
   }
 
   /** Outline Danger Spinner */
 
   .outline.danger > .btn-spinner {
-    animation: spin 1s linear infinite;
+    animation: var(--btn-spinner-animation, spin 1s linear infinite);
     background: linear-gradient(#ffffff, #ffffff),
-      conic-gradient(from 0.15turn, white, #fc3d39);
+      conic-gradient(from 0.15turn, white, var(--btn-danger-border, #fc3d39));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
 
   .outline.danger:hover > .btn-spinner {
     background: linear-gradient(#ffffff, #ffffff),
-      conic-gradient(from 0.15turn, white, #e10703);
+      conic-gradient(from 0.15turn, white, var(--btn-danger-hover-bg, #e10703));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
@@ -230,35 +274,41 @@ export default css`
    */
 
   .filled.success {
-    background: #53d769;
-    border: 1px solid #53d769;
-    color: #ffffff;
+    background: var(--btn-success-bg, #53d769);
+    border: 1px solid var(--btn-success-border, #53d769);
+    color: var(--btn-primary-color, #ffffff);
   }
 
   .filled.success:hover,
   .filled.success:active {
-    background-color: #26a53b;
+    background-color: var(--btn-success-hover-bg, #26a53b);
     background-position: 0 0;
-    color: #ffffff;
+    color: var(--btn-primary-color, #ffffff);
   }
 
   .filled.success:active {
-    opacity: 0.75;
+    opacity: var(--btn-success-active-opacity, 0.75);
   }
 
   /** Filled Success Spinner */
 
   .filled.success > .btn-spinner {
-    animation: spin 1s linear infinite;
-    background: linear-gradient(#53d769, #53d769),
-      conic-gradient(from 0.15turn, white, #53d769);
+    animation: var(--btn-spinner-animation, spin 1s linear infinite);
+    background: linear-gradient(
+        var(--btn-success-bg, #53d769),
+        var(--btn-success-bg, #53d769)
+      ),
+      conic-gradient(from 0.15turn, white, var(--btn-success-bg, #53d769));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
 
   .filled.success:hover > .btn-spinner {
-    background: linear-gradient(#26a53b, #26a53b),
-      conic-gradient(from 0.15turn, white, #26a53b);
+    background: linear-gradient(
+        var(--btn-success-hover-bg, #26a53b),
+        var(--btn-success-hover-bg, #26a53b)
+      ),
+      conic-gradient(from 0.15turn, white, var(--btn-success-hover-bg, #26a53b));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
@@ -269,35 +319,35 @@ export default css`
 
   .outline.success {
     background: #ffffff;
-    border: 1px solid #53d769;
-    color: #53d769;
+    border: 1px solid var(--btn-success-border, #53d769);
+    color: var(--btn-success-border, #53d769);
   }
 
   .outline.success:hover,
   .outline.success:active {
     background-color: #ffffff;
     background-position: 0 0;
-    color: #26a53b;
-    border: 1px solid #26a53b;
+    color: var(--btn-success-hover-bg, #26a53b);
+    border: 1px solid var(--btn-success-hover-bg, #26a53b);
   }
 
   .outline.success:active {
-    opacity: 0.75;
+    opacity: var(--btn-success-active-opacity, 0.75);
   }
 
   /** Outline Success Spinner */
 
   .outline.success > .btn-spinner {
-    animation: spin 1s linear infinite;
+    animation: var(--btn-spinner-animation, spin 1s linear infinite);
     background: linear-gradient(#ffffff, #ffffff),
-      conic-gradient(from 0.15turn, white, #53d769);
+      conic-gradient(from 0.15turn, white, var(--btn-success-border, #53d769));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
 
   .outline.success:hover > .btn-spinner {
     background: linear-gradient(#ffffff, #ffffff),
-      conic-gradient(from 0.15turn, white, #26a53b);
+      conic-gradient(from 0.15turn, white, var(--btn-success-hover-bg, #26a53b));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
@@ -307,35 +357,41 @@ export default css`
    */
 
   .filled.neutral {
-    background: #e8e8e8;
-    border: 1px solid #000000;
-    color: #000000;
+    background: var(--btn-neutral-bg, #e8e8e8);
+    border: 1px solid var(--btn-neutral-border, #000000);
+    color: var(--btn-neutral-border, #000000);
   }
 
   .filled.neutral:hover,
   .filled.neutral:active {
-    background-color: #dcdcdc;
+    background-color: var(--btn-neutral-hover-bg, #dcdcdc);
     background-position: 0 0;
-    color: #000000;
+    color: var(--btn-neutral-border, #000000);
   }
 
   .filled.neutral:active {
-    opacity: 0.75;
+    opacity: var(--btn-neutral-active-opacity, 0.75);
   }
 
   /** Filled Neutral Spinner */
 
   .filled.neutral > .btn-spinner {
-    animation: spin 1s linear infinite;
-    background: linear-gradient(#e8e8e8, #e8e8e8),
-      conic-gradient(from 0.15turn, black, #e8e8e8);
+    animation: var(--btn-spinner-animation, spin 1s linear infinite);
+    background: linear-gradient(
+        var(--btn-neutral-bg, #e8e8e8),
+        var(--btn-neutral-bg, #e8e8e8)
+      ),
+      conic-gradient(from 0.15turn, black, var(--btn-neutral-bg, #e8e8e8));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
 
   .filled.neutral:hover > .btn-spinner {
-    background: linear-gradient(#dcdcdc, #dcdcdc),
-      conic-gradient(from 0.15turn, black, #dcdcdc);
+    background: linear-gradient(
+        var(--btn-neutral-hover-bg, #dcdcdc),
+        var(--btn-neutral-hover-bg, #dcdcdc)
+      ),
+      conic-gradient(from 0.15turn, black, var(--btn-neutral-hover-bg, #dcdcdc));
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
@@ -346,25 +402,25 @@ export default css`
 
   .outline.neutral {
     background: #ffffff;
-    border: 1px solid #000000;
-    color: #000000;
+    border: 1px solid var(--btn-neutral-border, #000000);
+    color: var(--btn-neutral-border, #000000);
   }
 
   .outline.neutral:hover,
   .outline.neutral:active {
     background-color: #ffffff;
     background-position: 0 0;
-    color: #000000;
+    color: var(--btn-neutral-border, #000000);
   }
 
   .outline.neutral:active {
-    opacity: 0.75;
+    opacity: var(--btn-neutral-active-opacity, 0.75);
   }
 
   /** Outline Neutral Spinner */
 
   .outline.neutral > .btn-spinner {
-    animation: spin 1s linear infinite;
+    animation: var(--btn-spinner-animation, spin 1s linear infinite);
     background: linear-gradient(#ffffff, #ffffff),
       conic-gradient(from 0.15turn, black, #ffffff);
     background-origin: border-box;

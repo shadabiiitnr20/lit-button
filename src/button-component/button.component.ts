@@ -19,6 +19,9 @@ export default class LitButton extends LitElement {
 
   @property({ type: String, reflect: true }) size: 'sm' | 'md' = 'md';
 
+  @property({ type: String, reflect: true }) iconPosition: 'left' | 'right' =
+    'left';
+
   @property({ type: Boolean, reflect: true })
   disabled: boolean = false;
 

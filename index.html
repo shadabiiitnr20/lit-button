@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LitButton</title>
+    <link href="./styles.css" rel="stylesheet" />
+    <script type="module" src="./src/button-component/button.ts"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <h2>Lit Custom Button, By Md. Shadab Hussain</h2>
+      <div class="button-container">
+        <h4>With Custom Labels, Variants and Sizes</h4>
+        <div style="display: flex; align-items: center; gap: 2rem">
+          <lit-button
+            class="increment-button"
+            variant="filled"
+            type="primary"
+            size="md"
+            label="Increment"
+          ></lit-button>
+          <h4 class="counter">Count: 0</h4>
+        </div>
+        <lit-button
+          variant="outline"
+          type="primary"
+          size="sm"
+          label="Submit"
+        ></lit-button>
+      </div>
+      <div class="button-container">
+        <h4>With Font Awesome Free Icons</h4>
+        <lit-button variant="filled" type="danger" size="md">
+          <span slot="icon" style="display: contents">
+            <i class="fa fa-trash"></i>
+          </span>
+        </lit-button>
+        <lit-button variant="outline" type="danger" size="sm">
+          <span slot="icon" style="display: contents">
+            <i class="fa fa-trash"></i>
+          </span>
+        </lit-button>
+      </div>
+      <div class="button-container">
+        <lit-button variant="filled" type="success" size="md"></lit-button>
+        <lit-button variant="outline" type="success" size="sm"></lit-button>
+      </div>
+      <div class="button-container">
+        <h4>
+          With Loader, loader property can be set to true or false from the
+          application side
+        </h4>
+        <lit-button
+          variant="filled"
+          type="neutral"
+          size="md"
+          loader
+        ></lit-button>
+        <lit-button
+          variant="outline"
+          type="neutral"
+          size="sm"
+          loader
+        ></lit-button>
+      </div>
+      <div class="button-container">
+        <h4>Disabled Button</h4>
+        <lit-button
+          variant="filled"
+          type="primary"
+          size="md"
+          disabled
+        ></lit-button>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const button = document.querySelector('.increment-button');
+        const counterElement = document.querySelector('.counter');
+        let count = 0; // Initialize count
+
+        button.addEventListener('click', () => {
+          count++; // Increment count
+          counterElement.textContent = `Count: ${count}`; // Update the counter display
+        });
+      });
+    </script>
+  </body>
+</html>
