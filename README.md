@@ -8,7 +8,7 @@ To run the application locally -
 2. Navigate to root folder and run `npm i`.
 3. Run command `npm run dev`.
 
-!(<Screenshot 2024-07-15 at 7.49.34 PM.png>)
+![Lit Button](lit-button.png 'Lit Button')
 
 - Write Test Cases & Test it thoroughly in local in a react application
 - Write thorough documentation, mentioning about the exposed properties, how to add icons, how to use loader and disabled property from the application, and exposed CSS variables. (Few documentation work has been done below)
