@@ -8,7 +8,7 @@ To run the application locally -
 2. Navigate to root folder and run `npm i`.
 3. Run command `npm run dev`.
 
-![Lit Button with Different Variants](<Screenshot 2024-07-15 at 7.49.34 PM.png>)
+(<Screenshot 2024-07-15 at 7.49.34 PM.png>)
 
 - Write Test Cases & Test it thoroughly in local in a react application
 - Write thorough documentation, mentioning about the exposed properties, how to add icons, how to use loader and disabled property from the application, and exposed CSS variables. (Few documentation work has been done below)
@@ -18,47 +18,47 @@ To run the application locally -
 
 The Button component is highly customizable through a set of properties. Below is a detailed description of each property available for customization:
 
-## `label`
+#### `label`
 
 - **Type**: `String`
 - **Default**: `"Click Me!"`
 - **Description**: Sets the button's display text.
 
-## `variant`
+#### `variant`
 
 - **Type**: `String`
 - **Allowed Values**: `"filled"`, `"outline"`
 - **Default**: `"filled"`
 - **Description**: Determines the button's style variant. The `"filled"` variant provides a solid background, while the `"outline"` variant provides a bordered style without a background fill.
 
-## `type`
+#### `type`
 
 - **Type**: `String`
 - **Allowed Values**: `"primary"`, `"danger"`, `"success"`, `"neutral"`
 - **Default**: `"primary"`
 - **Description**: Sets the button's type, which influences its color scheme. Each type represents a different semantic meaning (e.g., `"primary"` for primary actions, `"danger"` for destructive actions, etc.).
 
-## `size`
+#### `size`
 
 - **Type**: `String`
 - **Allowed Values**: `"sm"`, `"md"`
 - **Default**: `"md"`
 - **Description**: Determines the size of the button. `"sm"` for small and `"md"` for medium.
 
-## `iconPosition`
+#### `iconPosition`
 
 - **Type**: `String`
 - **Allowed Values**: `"left"`, `"right"`
 - **Default**: `"left"`
 - **Description**: Specifies the position of the icon (if present) relative to the button's label. It can be positioned to the `"left"` or `"right"` of the text.
 
-## `disabled`
+#### `disabled`
 
 - **Type**: `Boolean`
 - **Default**: `false`
 - **Description**: If set to `true`, disables the button, preventing users from interacting with it.
 
-## `loader`
+#### `loader`
 
 - **Type**: `Boolean`
 - **Default**: `false`
