@@ -1,6 +1,6 @@
 # Lit Button
 
-This is a custom button component, made using Lit. This project is almost completed but few extra things are left.
+This project features a custom button component developed with Lit. It is nearing completion, with only a few enhancements remaining.
 
 To run the application locally -
 
