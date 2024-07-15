@@ -8,13 +8,13 @@ To run the application locally -
 2. Navigate to root folder and run `npm i`.
 3. Run command `npm run dev`.
 
-(<Screenshot 2024-07-15 at 7.49.34 PM.png>)
+!(<Screenshot 2024-07-15 at 7.49.34 PM.png>)
 
 - Write Test Cases & Test it thoroughly in local in a react application
 - Write thorough documentation, mentioning about the exposed properties, how to add icons, how to use loader and disabled property from the application, and exposed CSS variables. (Few documentation work has been done below)
 - Publish the component to npm, setup a CI/CD pipleline to automate the publishing task.
 
-### Lit Button Component Properties
+### <u>Lit Button Component Properties</u>
 
 The Button component is highly customizable through a set of properties. Below is a detailed description of each property available for customization:
 
@@ -66,7 +66,7 @@ The Button component is highly customizable through a set of properties. Below i
 
 These properties allow for extensive customization of the Button component to fit various UI needs.
 
-### Using FontAwesome Icons with Lit-Button
+### <u>Using FontAwesome Icons with Lit-Button</u>
 
 This guide explains how to incorporate FontAwesome icons into the `lit-button` component to enhance its visual appeal and user experience.
 
