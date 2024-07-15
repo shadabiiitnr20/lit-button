@@ -1,6 +1,6 @@
 # Lit Button
 
-This is a custom button component, made using Lit. This project is almost completed but few extra things are left -
+This is a custom button component, made using Lit. This project is almost completed but few extra things are left.
 
 To run the application locally -
 
@@ -9,6 +9,8 @@ To run the application locally -
 3. Run command `npm run dev`.
 
 ![Lit Button](lit-button.png 'Lit Button')
+
+Future Plan with this project -
 
 - Write Test Cases & Test it thoroughly in local in a react application
 - Write thorough documentation, mentioning about the exposed properties, how to add icons, how to use loader and disabled property from the application, and exposed CSS variables. (Few documentation work has been done below)
