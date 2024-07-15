@@ -13,7 +13,7 @@ To run the application locally -
 Future Plan with this project -
 
 - Write Test Cases & Test it thoroughly in local in a react application.
-- Revisit the designs of the button again.
+- Revisit the designs of the button.
 - Write thorough documentation, mentioning about the exposed properties, how to add icons, how to use loader and disabled property from the application, and exposed CSS variables. (Few documentation work has been done below)
 - Publish the component to npm, setup a CI/CD pipleline to automate the publishing task.
 
